@@ -39,4 +39,6 @@ public class FlightController {
     public List<Flight> getListOfFlight() {
         return flightRepository.findAll();
     }
+    @GetMapping("/retrieving/ontime")
+    public List<Flight> findByStatusOnTime() {return flightRepository.findByStatusOnTime(FlightStatus.ONTIME);}
 }
